@@ -1,0 +1,78 @@
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <style>
+        .container {
+            max-width: 800px;
+        }
+        
+        body {
+            font-family: Geneva;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Build your own "If X Were Interviewed Like Programmers Story"</h1>
+    <p>Fill in this Mad-Lib to create your own story about X profession being interviewed like programmers. Then you can
+        post your original creation to social media and get upvotes.</p>
+
+    <h3>Start here:</h3>
+    <form action="/" method="post">
+        <div class="form-group">
+            <label for="PROFESSION">A profession:</label>
+            <input class="form-control" class="form-control" type="text" id="PROFESSION" name="PROFESSION">
+        </div>
+        <div class="form-group">
+            <label for="COMMON_TASK">A common task in that profession:</label>
+            <input class="form-control" type="text" id="COMMON_TASK" name="COMMON_TASK">
+        </div>
+        <div class="form-group">
+            <label for="SECOND_COMMON_TASK">Another common task in that profession:</label>
+            <input class="form-control" type="text" id="SECOND_COMMON_TASK" name="SECOND_COMMON_TASK">
+        </div>
+        <div class="form-group">
+            <label for="OFF_THE_WALL_QUESTION">An obscure, extremely detailed, or off the wall question related to the
+                profession:</label>
+            <input class="form-control" type="text" id="OFF_THE_WALL_QUESTION" name="OFF_THE_WALL_QUESTION">
+        </div>
+        <div class="form-group">
+            <label for="SOLUTION">Solution to the question:</label>
+            <input class="form-control" type="text" id="SOLUTION" name="SOLUTION">
+        </div>
+        <div class="form-group">
+            <label for="ESSENTIAL_TOOL">An essential tool of the profession:</label>
+            <input class="form-control" type="text" id="ESSENTIAL_TOOL" name="ESSENTIAL_TOOL">
+        </div>
+        <div class="form-group">
+            <label for="SECOND_ESSENTIAL_TOOL">Another essential tool of the profession:</label>
+            <input class="form-control" type="text" id="SECOND_ESSENTIAL_TOOL" name="SECOND_ESSENTIAL_TOOL">
+        </div>
+        <div class="form-group">
+            <label for="PREP_BOOK">Name of a prep book for interviews:</label>
+            <input class="form-control" type="text" id="PREP_BOOK" name="PREP_BOOK">
+        </div>
+        <div class="form-group">
+            <label for="COMP_NAME">Name of competition in profession:</label>
+            <input class="form-control" type="text" id="COMP_NAME" name="COMP_NAME">
+        </div>
+
+        <div class="button">
+            <button class="btn btn-success" type="submit">Create your story!</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
