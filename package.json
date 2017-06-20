@@ -1,0 +1,19 @@
+{
+  "name": "if-companies-interviewed-programmers-like-x",
+  "version": "1.0.0",
+  "description": "A web app for generating \"If Companies Interviewed Programmers Like X\" style stories.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njenan/if-companies-interviewed-programmers-like-x.git"
+  },
+  "author": "Nathan Jenan",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/njenan/if-companies-interviewed-programmers-like-x/issues"
+  },
+  "homepage": "https://github.com/njenan/if-companies-interviewed-programmers-like-x#readme"
+}
