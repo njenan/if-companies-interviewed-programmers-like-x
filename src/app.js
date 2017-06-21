@@ -36,6 +36,27 @@ app.get('/stories/:id', (req, res) => {
     res.sendFile(__dirname + '/stories/' + req.params.id + '.html');
 });
 
+app.get('/stories', (req, res) => {
+    var trackingId = uuid();
+    console.log('Starting story count request id=' + trackingId);
+
+    if (req.query.countOnly) {
+        fs.readdir(__dirname + '/stories', (err, data) => {
+            if (err) {
+                console.error('An error occurred id=' + trackingId, err);
+                res.sendStatus(500);
+            } else {
+                console.log('Got story count of', data.length, 'returning that to the client id=' + trackingId);
+                
+                res.send({count: data.length});
+            }
+        });
+    } else {
+        console.error('Request did not have countOnly query param, returning 404 id=' + trackingId);
+        res.sendStatus(404);
+    }
+});
+
 
 let prepend = '<html><head>     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"             crossorigin="anonymous"></script>      <style>         .container {             max-width: 800px;         }                  body {             font-family: Geneva;         }     </style> </head><body><div class="container">';
 
