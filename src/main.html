@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -17,7 +19,7 @@
         .container {
             max-width: 800px;
         }
-        
+
         body {
             font-family: Geneva;
         }
@@ -28,6 +30,13 @@
     <h1>Build your own "If X Were Interviewed Like Programmers Story"</h1>
     <p>Fill in this Mad-Lib to create your own story about X profession being interviewed like programmers. Then you can
         post your original creation to social media and get upvotes.</p>
+
+
+    <h3>Quick-fill templates:</h3>
+    <select id="quick-fill" class="form-control">
+        <option></option>
+        <option>Garbageman</option>
+    </select>
 
     <h3>Start here:</h3>
     <form action="/" method="post">
@@ -74,5 +83,32 @@
         </div>
     </form>
 </div>
+
+<script>
+    var options = {
+        Garbageman: {
+            PROFESSION: 'Garbageman',
+            COMMON_TASK: 'Taking out the trash',
+            SECOND_COMMON_TASK: 'Driving a garbage truck',
+            OFF_THE_WALL_QUESTION: 'In what decade did the trend toward side loader garbage trucks begin?',
+            SOLUTION: 'It began in the 1980s',
+            ESSENTIAL_TOOL: 'Garbage truck',
+            SECOND_ESSENTIAL_TOOL: 'Gloves',
+            PREP_BOOK: 'Taking out the trash: Acing the waste management interview',
+            COMP_NAME: 'Garbage off'
+        }
+    };
+    $(window).ready(function () {
+        $('#quick-fill').change(function () {
+            var key = $('#quick-fill option:selected').text();
+
+            var data = options[key];
+
+            Object.keys(data).forEach(function (key) {
+                $('#' + key).val(data[key]);
+            });
+        });
+    });
+</script>
 </body>
 </html>
