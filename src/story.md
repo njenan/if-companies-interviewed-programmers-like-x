@@ -12,11 +12,11 @@
 
 **Interviewer:** It's a simple question.  Grad-students have an easier time with this, usually our candidates who have been out in the workforce for a few years get rusty on this. 
 
-**Candidate** Right, well usually I would have access to a [[ESSENTIAL TOOL OF THE TRADE]] when working.
+**Candidate:** Right, well usually I would have access to a [[ESSENTIAL TOOL OF THE TRADE]] when working.
 
 **Interviewer:** The goal of this exercise is to write the solution directly on this whiteboard.
 
-**Candidate** Hold on, normally while I'm working I use a [[ESSENTIAL TOOL OF THE TRADE]] or a [[SECOND ESSENTIAL TOOL OF THE TRADE]].  Why are you testing me on [[PROFESSION]] skills without a [[ESSENTIAL TOOL OF THE TRADE]].
+**Candidate:** Hold on, normally while I'm working I use a [[ESSENTIAL TOOL OF THE TRADE]] or a [[SECOND ESSENTIAL TOOL OF THE TRADE]].  Why are you testing me on [[PROFESSION]] skills without a [[ESSENTIAL TOOL OF THE TRADE]].
 
 **Interviewer:** Studies from major companies have shown that-
 
@@ -30,8 +30,8 @@
 
 **Candidate:** [[PROFESSIONAL COMPETITION NAME]]?
 
-**Interviewer:** [[PROFESSIONAL COMPETITION NAME]].  It's where [[PROFESSION]] get together for 48 hours and compete [[COMMON TASK]].  There's pizza and beer and it looks really great on your resume.
+**Interviewer:** [[PROFESSIONAL COMPETITION NAME]].  It's where [[PROFESSION]]s get together for 48 hours and compete [[COMMON TASK]].  There's pizza and beer and it looks really great on your resume.
 
-**Candidate:** No.  No, I've never done that.  
+**Candidate:** No.  No, I've never done that.
 
 **Interviewer:** That's unfortunate, we like to hire [[PROFESSIONAL COMPETITION NAME]] winners here.  No, I'm sorry, this just isn't working out.
