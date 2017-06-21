@@ -23,6 +23,10 @@
         body {
             font-family: Geneva;
         }
+        
+        #story-count {
+            padding-bottom: 100px;
+        }
     </style>
 </head>
 <body>
@@ -82,6 +86,14 @@
             <button class="btn btn-success" type="submit">Create your story!</button>
         </div>
     </form>
+    <small id="story-count">Happily serving XXX stories.</small>
+    <script>
+        $(window).ready(function () {
+            $.get('./stories?countOnly=true', function (data) {
+                $('#story-count').text($('#story-count').text().replace('XXX', data.count));
+            });
+        });
+    </script>
 </div>
 
 <script>
