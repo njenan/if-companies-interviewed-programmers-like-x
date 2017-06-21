@@ -35,8 +35,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/logs', (req, res) => {
-    childProcess.exec('tail nohup.out', (err, stdout, stderr) => {
-        console.log(stdout);
+    childProcess.exec('tail -100 nohup.out', (err, stdout, stderr) => {
         res.send('<p>' + stdout.split('\n').join('</p><p>') + '</p>');
     });
 });
