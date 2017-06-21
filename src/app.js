@@ -36,6 +36,11 @@ app.get('/stories/:id', (req, res) => {
     res.sendFile(__dirname + '/stories/' + req.params.id + '.html');
 });
 
+
+let prepend = '<html><head>     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"             crossorigin="anonymous"></script>      <style>         .container {             max-width: 800px;         }                  body {             font-family: Geneva;         }     </style> </head><body><div class="container">';
+
+let postpend = '</div></body></html>';
+
 app.post('/', (req, res) => {
     var temp = replaceAll(template, '[[PROFESSION]]', req.body['PROFESSION']);
     temp = replaceAll(temp, '[[COMMON TASK]]', req.body['COMMON_TASK']);
@@ -48,6 +53,7 @@ app.post('/', (req, res) => {
     temp = replaceAll(temp, '[[PROFESSIONAL COMPETITION NAME]]', req.body['COMP_NAME']);
 
     marked(temp, (err, content) => {
+        content = prepend + content + postpend;
         if (err) {
             console.error(err);
             res.sendStatus(500);
