@@ -42,6 +42,9 @@ let prepend = '<html><head>     <link rel="stylesheet" href="https://maxcdn.boot
 let postpend = '</div></body></html>';
 
 app.post('/', (req, res) => {
+    var trackingId = uuid();
+    console.log('Starting new story request id=' + trackingId);
+
     var temp = replaceAll(template, '[[PROFESSION]]', req.body['PROFESSION']);
     temp = replaceAll(temp, '[[COMMON TASK]]', req.body['COMMON_TASK']);
     temp = replaceAll(temp, '[[SECOND COMMON TASK]]', req.body['SECOND_COMMON_TASK']);
@@ -52,18 +55,21 @@ app.post('/', (req, res) => {
     temp = replaceAll(temp, '[[INTERVIEW PREP BOOK NAME]]', req.body['PREP_BOOK']);
     temp = replaceAll(temp, '[[PROFESSIONAL COMPETITION NAME]]', req.body['COMP_NAME']);
 
+    console.log('Beginning markdown to html conversion id=' + trackingId);
     marked(temp, (err, content) => {
+        console.log('Markdown conversion finished, assembling html and persisting to file system id=' + trackingId);
         content = prepend + content + postpend;
         if (err) {
-            console.error(err);
+            console.error('An error occurred id=' + trackingId, err);
             res.sendStatus(500);
         } else {
             let id = uuid();
             fs.writeFile(__dirname + '/stories/' + id + '.html', content, {}, (err) => {
                 if (err) {
-                    console.error(err);
+                    console.error('An error occurred id=' + trackingId, err);
                     res.sendStatus(500);
                 } else {
+                    console.log('write to file system successful, redirecting to page id=' + trackingId);
                     res.redirect('./stories/' + id);
                 }
             });
