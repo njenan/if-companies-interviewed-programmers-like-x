@@ -8,6 +8,8 @@ let bodyParser = require('body-parser');
 
 let marked = require('marked');
 
+let childProcess = require('child_process');
+
 const template = fs.readFileSync(__dirname + '/story.md').toString();
 
 function replaceAll(string, pattern, replace) {
@@ -32,6 +34,12 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/main.html');
 });
 
+app.get('/logs', (req, res) => {
+    childProcess.exec('tail nohup.out', (err, stdout, stderr) => {
+        res.send(stdout);
+    });
+});
+
 app.get('/stories/:id', (req, res) => {
     res.sendFile(__dirname + '/stories/' + req.params.id + '.html');
 });
@@ -47,7 +55,7 @@ app.get('/stories', (req, res) => {
                 res.sendStatus(500);
             } else {
                 console.log('Got story count of', data.length, 'returning that to the client id=' + trackingId);
-                
+
                 res.send({count: data.length});
             }
         });
