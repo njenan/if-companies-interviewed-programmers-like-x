@@ -71,6 +71,14 @@ app.post('/', (req, res) => {
     });
 });
 
+var port;
+
+if (process.argv[2]) {
+    port = process.argv[2];
+} else {
+    port = '8080';
+}
+
 app.listen('8080', () => {
     console.log('App listening on port 8080');
 });
